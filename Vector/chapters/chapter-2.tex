@@ -1,0 +1,203 @@
+\newpage
+\section*{রাশি ও সদিক রেখাংশ}
+\begin{tcolorbox}[colback=green!5!white, colframe=green!75!black, title=রাশি]
+	ভৌত জগতে যা কিছু পরিমাপ করা যায়, তাকে রাশি বলে।
+	রাশি ২ প্রকারের। যথাঃ
+	\begin{enumerate}
+		\item অদিক রাশি বা স্কেলার রাশি (Scalar):\\
+		সম্পূর্ণরূপে প্রকাশ করতে শুধু মান প্রয়োজন। যেমনঃ দৈর্ঘ্য, দূরত্ব, ভর, আয়তন ইত্যাদি।
+		\item সদিক রাশি বা ভেক্টর রাশি (Vector):\\
+		সম্পূর্ণরূপে প্রকাশ করতে মান এবং দিক উভয়ই প্রয়োজন। যেমনঃ বল, সরণ, বেগ, ত্বরণ ইত্যাদি। 
+	\end{enumerate}
+\end{tcolorbox}
+\begin{figure}[h]
+	\centering
+	\input{images/vector-fig}
+	\caption{সদিক রেখাংশ (Directed Line Segment)}
+	\label{vec-fig}
+\end{figure}
+\begin{tcolorbox}[colback=green!5!white, colframe=green!75!black,title=দিক নির্দেশক রেখাংশ বা সদিক রেখাংশ] 
+	কোনো সরলরেখার এক প্রান্তকে আদিবিন্দু (Initial Point) এবং অপর প্রান্তকে অন্তবিন্দু (Terminal Point) হিসেবে চিহ্নিত করলেই, ঐ সরলরেখাটি একটি দিক নির্দেশক রেখাংশ বা সদিক রেখাংশ (directed line segment) হবে। কোনো সরলরেখার আদিবিন্দু $A$ এবং অন্তবিন্দু $B$ হলে, $AB$ রেখাংশটি একটি সদিক রেখাংশ যাকে $\overrightarrow{AB}$ দ্বারা প্রকাশ করা হয়। $\overrightarrow{AB}$ এর দিক হবে $A$ (initial point) থেকে $B$ (terminal point) এর দিকে।
+\end{tcolorbox}
+\newpage
+\section*{ভেক্টরের ধারক ও সমতা }
+\begin{figure}[h]
+	\centering
+	\input{images/vector-fig-1}
+	\caption{ভেক্টর এর ধারক}
+	\label{vec-fig-1}
+\end{figure}
+\begin{itemize}
+	\item[$(i)$] \textbf{ধারক (Support):} কোনো ভেক্টর নির্দেশক সদিক রেখাংশ যে অসীম সরলরেখার অংশ, তাকে ঐ ভেক্টরের ধারক রেখা বলে। চিত্র \ref{vec-fig-1} এ $\overrightarrow{AB}$ বা $\underline{a}$ এর ধারক $XY$। 
+	\item[$(ii)$] \textbf{মান (Magnitude):} ভেক্টরের আদিবিন্দু ও অন্তবিন্দুর মধ্যবর্তী দূরত্বকে ঐ ভেক্টরের মান বলে। $\overrightarrow{AB}$ বা $\underline{a}$ ভেক্টর এর মানকে $|\overrightarrow{AB}|=a$ দ্বারা প্রকাশ করা হয়। 
+	\item[$(iii)$] \textbf{দিক (Sense or Direction):} ভেক্টরের দিক হবে আদিবিন্দু হতে অন্তবিন্দুর দিকে। $\overrightarrow{AB}$ এর দিক $A$ বিন্দু থেকে $B$ বিন্দুর দিকে। 
+	\item[$(iv)$] \textbf{ভেক্টরের সমতাঃ} দুইটি ভেক্টর সমান হবে যদি, 
+	\begin{enumerate}
+		\item তাদের ধারক রেখা একই বা সমান্তরাল হয়। 
+		\item তাদের মান সমান হয়।
+		\item তাদের দিক একই হয়।  
+	\end{enumerate}
+	চিত্র \ref{vec-fig-2} এ $\overrightarrow{AB}=\overrightarrow{CD}$
+	\begin{figure}[h]
+		\centering
+		\input{images/vector-fig-2}
+		\caption{ভেক্টরের সমতা}
+		\label{vec-fig-2}
+	\end{figure}
+\end{itemize}
+
+\section*{বিভিন্ন প্রকারের ভেক্টর (Different Types of Vector)}
+\begin{enumerate}
+	\item \textbf{শূন্য ভেক্টর ও প্রকৃত ভেক্টর (Null Vector \& Proper Vector):} যে ভেক্টরের মান শূন্য ও দিক নির্ণয় করা যায় না, তাকে শূন্য ভেক্টর বলে যাকে $\underline{0}$ বা $\mathbf{0}$ দ্বারা প্রকাশ করা হয়। শূন্য ভেক্টর ব্যতীত সকল ভেক্টরকে প্রকৃত ভেক্টর বলা হয়। 
+	
+	\item \textbf{একক ভেক্টর (Unit Vector):} যে ভেক্টরের মান এক, তাকে একক ভেক্টর বলে। প্রকৃত ভেক্টরকে তার মান দ্বারা ভাগ করলে একক ভেক্টর পাওয়া যায়। একক ভেক্টর এর উপর \\( $\hat{}$ ) চিহ্ন ব্যবহার করা হয়। \\ Example: $\overrightarrow{AB}$ বরাবর একক ভেক্টর $\hat{\pmb{a}}=\dfrac{\overrightarrow{AB}}{|\overrightarrow{AB}|}=\dfrac{\underline{a}}{a}$
+	
+	\item \textbf{সমরৈখিক ভেক্টর (Collinear Vectors):} যেসকল ভেক্টরের ধারক রেখা একই বা সমান্তরাল, তাদেরকে সমরৈখিক ভেক্টর বলা হয়। যদি $\underline{a}$ ও $\underline{b}$ ভেক্টর দুইটি সমরৈখিক হয় তবে $\underline{a}=\lambda\underline{b};$ যেখানে $\lambda$ একটি অশূন্য স্কেলার। সমরৈখিক ভেক্টর দুই প্রকারেরঃ
+	\begin{figure}[h]
+		\centering
+		\input{images/vector-fig-3}
+		\caption{Collinear Vectors}
+		\label{vec-fig-3}
+	\end{figure} 
+	\begin{itemize}
+		\item[$(i)$] \textbf{সদৃশ ভেক্টর (Like Vectors):} যেসকল ভেক্টর এর দিক একই, তাদের সদৃশ ভেক্টর বলা হয়। এক্ষেত্রে $\lambda>0$। চিত্র \ref{vec-fig-3} এ $\underline{a}$ ও $\underline{b}$ সদৃশ ভেক্টর। 
+		
+		\item[$(ii)$] \textbf{বিসদৃশ ভেক্টর (Unlike Vectors):} যেসকল ভেক্টর এর দিক পরস্পর বিপরীত, তাদের বিসদৃশ ভেক্টর বলা হয়। এক্ষেত্রে $\lambda<0$।  চিত্র \ref{vec-fig-3} এ $\underline{a}$ ও $\underline{c}$ বিসদৃশ ভেক্টর। 
+	\end{itemize} 
+	
+	
+	\item \textbf{বিপরীত ভেক্টর (Opposite Vector):} দুইটি ভেক্টরকে পরস্পরের বিপরীত বলা হবে যদি, 
+	\begin{itemize}
+		\item[$(i)$] তাদের ধারক রেখা একই বা সমান্তরাল হয়। 
+		\item[$(ii)$] তাদের মান সমান হয়। 
+		\item[$(iii)$] তাদের দিক বিপরীত হয় বা ভেক্টর দুইটি বিসদৃশ হয়। 
+	\end{itemize}
+	\begin{figure}[h]
+		\centering
+		\input{images/vector-fig-4}
+		\caption{Opposite Vector}
+		\label{vec-fig-4}
+	\end{figure}
+	চিত্র \ref{vec-fig-4} এ $\overrightarrow{AB}=-\overrightarrow{CD}$
+	
+	\newpage
+	\item \textbf{সমতলীয় ভেক্টর (Coplanar Vectors):} কতগুলো ভেক্টরকে সমতলীয় বলা হয়, যদি তাদের ধারক রেখা অভিন্ন সমতলের সমান্তরাল হয়।
+	
+	\item \textbf{অবস্থান ভেক্টর (Position Vector):} স্থির প্রসঙ্গ কাঠামো ও মূলবিন্দুর সাপেক্ষে কোনো বিন্দুর অবস্থান নির্দেশক ভেক্টরকে অবস্থান ভেক্টর বলে। চিত্র \ref{vec-fig-5} এ $P$ বিন্দুর অবস্থান ভেক্টর $\underline{r}$। অর্থাৎ $\overrightarrow{OP}=\underline{r}$ বা $P(\underline{r})$। 
+	\begin{figure}[h]
+		\centering
+		\input{images/vector-fig-5}
+		\caption{Position Vector}
+		\label{vec-fig-5}
+	\end{figure}
+
+	\item \textbf{ভেক্টরের যোগাশ্রয়ী সমাবেশ (Linear Combination of Vectors):}\\ কোনো ভেক্টর $\underline{r}$ কে $\underline{v_1}, \underline{v_2}, \cdots, \underline{v_n}$ ভেক্তরগুলির যোগাশ্রয়ী সমাবেশ বলা হয় যদি\\ $\underline{r}=\alpha_1\underline{v_1}+\alpha_2\underline{v_2}+\cdots+\alpha_n\underline{v_n}$ হয়। যেখানে $\alpha_1, \alpha_2, \cdots, \alpha_n$ স্কেলার রাশি। 
+\end{enumerate}
+\newpage
+\section*{দুইটি ভেক্টরের অন্তর্ভুক্ত কোণ \\(Angle Between Two Vectors)}
+\begin{figure}[h]
+	\centering
+	\input{images/vector-fig-6}
+	\caption{দুইটি ভেক্টরের অন্তর্ভুক্ত কোণ}
+	\label{vec-fig-6}
+\end{figure}
+মনেকরি $\underline{u}$ ও $\underline{v}$ ভেক্টর দুইটি একটি নির্দিষ্ট বিন্দুতে ছেদ করেছে। তাদের অন্তর্ভুক্ত কোণ $\theta$ হলে $0\leq\theta\leq\pi$। (চিত্র \ref{vec-fig-6})।   
+\begin{tcolorbox}
+	\textbf{Note:} দুইটি ভেক্টরের অন্তর্ভুক্ত কোণ মাপার সময় অবশ্যই ভেক্টর দুইটির আদিবিন্দু অথবা অন্তবিন্দু একই বিন্দুতে মিলিত হতে হবে। 
+\end{tcolorbox}
+\section*{ভেক্টর সংক্রান্ত সূত্রসমূহ (Law's of Vector)}
+\subsection*{ভেক্টর যোগের ত্রিভুজ সূত্র (Triangle Law of Addition)}
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=ত্রিভুজ সূত্র]
+	কোনো ভেক্টর $\underline{u}$ এর প্রান্তবিন্দু হতে অপর একটি ভেক্টর $\underline{v}$ অঙ্কন করা হলে $\underline{u}+\underline{v}$ দ্বারা এরুপ একটি ভেক্টর বোঝায় যার আদিবিন্দু $\underline{u}$ এর আদিবিন্দু এবং যার প্রান্তবিন্দু $\underline{v}$ এর প্রান্তবিন্দু।
+\end{tcolorbox}
+\begin{figure}[h]
+	\centering
+	\input{images/vector-fig-7}
+	\caption{ত্রিভুজ সূত্র}
+	\label{vec-fig-7}
+\end{figure} 
+
+\subsection*{ভেক্টর যোগের সামান্তরিক সূত্র (Parallelogram Law of Addition)}
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=সামান্তরিক সূত্র]
+	ভেক্টর $\underline{u}$ ও $\underline{v}$ কে একটি সামান্তরিকের দুইটি সন্নিহিত বাহু দ্বারা মানে ও দিকে সূচিত করা হলে, ভেক্তরদয়ের ছেদবিন্দুগামি সামান্তরিকের কর্ণটি ভেক্ত্ররদয়ের লব্ধি $\underline{u}+\underline{v}$ কে মানে ও দিকে প্রকাশ করবে।
+\end{tcolorbox}
+\begin{figure}[h]
+	\centering
+	\input{images/vector-fig-8}
+	\caption{সামান্তরিক সূত্র}
+	\label{vec-fig-8}
+\end{figure} 
+
+\subsection*{অন্তর্বিভক্তিকরণ সূত্র}
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black]
+	$A, B, C$ এর অবস্থান ভেক্টর যথাক্রমে $\underline{a}, \underline{b}, \underline{c}$ হলে এবং $C$ বিন্দু $AB$ রেখাংশকে $m:n$ অনুপাতে অন্তর্বিভক্ত করলে $\underline{c}=\dfrac{m\underline{b}+n\underline{a}}{m+n}$
+\end{tcolorbox}
+\begin{wrapfigure}[5]{r}{0.5\textwidth}
+	\begin{center}
+		\input{images/vector-fig-9}
+	\end{center}
+	\caption{অন্তর্বিভক্তিকরণ সূত্র}
+	\label{vec-fig-9}
+\end{wrapfigure}
+\textbf{প্রমাণঃ} দেওয়া আছে, 
+\begin{align*}
+	AC:BC &= m:n \\
+	\Rightarrow \dfrac{AC}{BC} &= \dfrac{m}{n} \\
+	\Rightarrow \dfrac{AC}{AC+BC} &= \dfrac{m}{m+n} \\
+	\Rightarrow \dfrac{AC}{AB} &= \dfrac{m}{m+n} \\
+	\therefore AC &= \dfrac{m}{m+n} AB \\
+	\therefore \overrightarrow{AC} &= \dfrac{m}{m+n} \overrightarrow{AB} \\
+	\Rightarrow \overrightarrow{AC} &= \dfrac{m}{m+n} (\overrightarrow{OB}-\overrightarrow{OA}) \quad \quad [\because \overrightarrow{OA}+\overrightarrow{AB}=\overrightarrow{OB}]
+\end{align*}
+\begin{equation}
+	\therefore \overrightarrow{AC} = \dfrac{m}{m+n} (\underline{b}-\underline{a}) \tag{1}
+\end{equation}
+$\triangle OAC$ হতে পাই, 
+\begin{align*}
+	\overrightarrow{OA}+\overrightarrow{AC} &= \overrightarrow{OC} \\
+	\Rightarrow \underline{a}+\dfrac{m}{m+n} (\underline{b}-\underline{a}) &= \underline{c} \quad \quad [\because \text{(1) হতে}]\\
+	\Rightarrow \underline{c} &= \dfrac{m(\underline{b}-\underline{a})+(m+n)\underline{a}}{m+n}\\
+	\Rightarrow \underline{c} &= \dfrac{m\underline{b}+(m+n-m)\underline{a}}{m+n} \\
+	\therefore \underline{c} &= \dfrac{m\underline{b}+n\underline{a}}{m+n}
+\end{align*}
+\newpage
+\subsection*{বহির্বিভক্তিকরণ সূত্র}
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black]
+	$A, B, C$ এর অবস্থান ভেক্টর যথাক্রমে $\underline{a}, \underline{b}, \underline{c}$ হলে এবং $C$ বিন্দু $AB$ রেখাংশকে $m:n$ অনুপাতে বহির্বিভক্ত করলে $\underline{c}=\dfrac{m\underline{b}-n\underline{a}}{m-n}$
+\end{tcolorbox}
+\begin{wrapfigure}[5]{r}{0.5\textwidth}
+	\begin{center}
+		\input{images/vector-fig-10}
+	\end{center}
+	\caption{বহির্বিভক্তিকরণ সূত্র}
+	\label{vec-fig-10}
+\end{wrapfigure}
+\textbf{প্রমাণঃ} দেওয়া আছে, 
+\begin{align*}
+	AC:BC &= m:n \\
+	\Rightarrow \dfrac{AC}{BC} &= \dfrac{m}{n} \\
+	\Rightarrow \dfrac{AC-BC}{BC} &= \dfrac{m-n}{n} \\
+	\Rightarrow \dfrac{AB}{BC} &= \dfrac{m-n}{n} \\
+	\therefore BC &= \dfrac{n}{m-n}AB \\
+	\therefore \overrightarrow{BC} &= \dfrac{n}{m-n}\overrightarrow{AB} \\
+	\Rightarrow \overrightarrow{BC} &= \dfrac{n}{m-n}(\overrightarrow{OB}-\overrightarrow{OA}) \quad \quad [\because \overrightarrow{OA}+\overrightarrow{AB}=\overrightarrow{OB}]
+\end{align*}
+\begin{equation}
+	\therefore \overrightarrow{BC} = \dfrac{n}{m-n}(\underline{b}-\underline{a}) \tag{1}
+\end{equation}
+$\triangle OBC$ হতে পাই,
+\begin{align*}
+	\overrightarrow{OB}+\overrightarrow{BC} &= \overrightarrow{OC} \\
+	\Rightarrow \underline{b}+\dfrac{n}{m-n}(\underline{b}-\underline{a}) &= \underline{c} \quad \quad [\because \text{(1) হতে}]\\
+	\Rightarrow \underline{c} &= \dfrac{(m-n)\underline{b}+n(\underline{b}-\underline{a})}{m-n} \\
+	\Rightarrow \underline{c} &= \dfrac{(m-n+n)\underline{b}-n\underline{a}}{m-n} \\
+	\therefore \underline{c} &= \dfrac{m\underline{b}-n\underline{a}}{m-n}
+\end{align*}
+\newpage
+\textbf{বিকল্প প্রমাণঃ} চিত্র \ref{vec-fig-10} এ $B$ বিন্দু $AC$ কে $m-n:n$ অনুপাতে অন্তর্বিভক্ত করে। সুতরাং অন্তর্বিভক্তিকরণ সূত্র অনুযায়ী, 
+\begin{align*}
+	\therefore \underline{b} &= \dfrac{(m-n)\underline{c}+n\underline{a}}{(m-n)+n} \\
+	\Rightarrow \underline{b} &= \dfrac{(m-n)\underline{c}+n\underline{a}}{m} \\
+	\Rightarrow m\underline{b} &= (m-n)\underline{c}+n\underline{a} \\
+	\therefore \underline{c} &= \dfrac{m\underline{b}-n\underline{a}}{m-n}
+\end{align*}

@@ -1,0 +1,34 @@
+\documentclass[a4paper,12pt,twoside]{book}
+\usepackage[banglamainfont=Kalpurush, banglattfont=Siyam Rupali]{latexbangla}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\leftmark}
+\fancyhead[LE,RO]{\thepage}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{units}
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+\usepackage{blkarray}
+\usepackage{color}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+
+\newtheorem{corollary}{অনুসিদ্ধান্ত}[section]
+\setcounter{chapter}{1}
+\begin{document}
+	\chapter{ভেক্টর}
+	{\Large Vector}\\
+	\rule{\textwidth}{2pt}
+	\input{chapters/chapter-2}
+
+\end{document}

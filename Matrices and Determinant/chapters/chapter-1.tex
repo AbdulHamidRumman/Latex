@@ -1,0 +1,1313 @@
+\newpage
+\section{ম্যাট্রিক্স এর সংজ্ঞা (Definition of Matrix)}
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=\textbf{সংজ্ঞা}]
+	নির্দিষ্ট সংখ্যক সংখ্যা, প্রতীক বা রাশি এর আয়তাকার বিন্যাসকে ম্যাট্রিক্স (Matrix) বলে।
+\end{tcolorbox}
+Example: 
+$
+A=[a_{ij}]=\begin{blockarray}{cccccc}
+	\text{ ১ম কলাম} & \text{২য় কলাম} & \cdots & n\text{-তম কলাম} & &\\
+	\pmb{\downarrow} & \pmb{\downarrow} & \cdots & \pmb{\downarrow} & & \\
+	\begin{block}{[cccc]cc}
+		a_{11} & a_{12} & \cdots & a_{1 n} & \pmb{\rightarrow} &\text{ ১ম সারি}\\ 
+		a_{21} & a_{22} & \cdots & a_{2 n} & \pmb{\rightarrow} & \text{২য় সারি}\\
+		\vdots & \vdots & \vdots & \vdots & & \vdots \\
+		a_{m 1} & a_{m 2} & \cdots & a_{m n} & \pmb{\rightarrow} & m\text{-তম সারি}\\
+	\end{block}
+\end{blockarray}
+$
+যেখানে, সারি $i=1,2,\cdots,m$ এবং কলাম $j=1,2,\cdots,n$\\
+একটি $m\times n$ (সারি সংখ্যা by কলাম সংখ্যা) আকারের ম্যাট্রিক্স।\\
+ম্যাট্রিক্স বোঝাতে $[\hspace{8pt}], (\hspace{8pt})$ বা $\left|\right|\hspace{4pt}\left|\right|$ ব্যবহার করা হয়।
+\begin{tcolorbox}
+	\begin{itemize}
+		\item[$\bullet$] \textbf{ভুক্তি (Entry):} ম্যাট্রিক্স অন্তর্গত সংখ্যাগুলিকে ভুক্তি (Entry) বলে। $a_{ij}$ হলো $(i,j)$ -তম ভুক্তি যেখানে $i=$ সারি নাম্বার এবং $j=$ কলাম নাম্বার। 
+		\item[$\bullet$] \textbf{ক্রম (Order):} কোন ম্যাট্রিক্স এর সারির সংখ্যা $m$ ও কলাম সংখ্যা $n$ হলে $m \times n$ কে ঐ ম্যাট্রিক্স এর ক্রম (Order) বলে।
+	\end{itemize}
+\end{tcolorbox}
+\begin{figure}[h]
+	\centering
+	\input{images/matrix-fig-1}
+	\caption{একটি ম্যাট্রিক্স}
+	\label{mat-fig-1}
+\end{figure}
+\section{ম্যাট্রিক্স এর প্রকারভেদ (Classification of Matrix)}
+\begin{enumerate}
+	\item \textbf{আয়তাকার ম্যাট্রিক্স (Rectangular Matrix):} যদি কোনো $m \times n$ আকারের ম্যাট্রিক্স এ $m\neq n$ হয় তবে তাকে আয়তাকার ম্যাট্রিক্স বলে। Example: 
+	$\left[\begin{array}{rrr}
+		2 & -1 & 3 \\
+		3 & 6 & -4
+	\end{array}\right]$ একটি $2 \times 3$ আকারের আয়তাকার ম্যাট্রিক্স।
+	
+	\item \textbf{সারি ম্যাট্রিক্স (Row Matrix):} কেবল একটি সারি সম্বলিত ম্যাট্রিক্স কে সারি মাত্রিক্সক বলে। Example: 
+	$\left[\begin{array}{ccc}
+	11 & 12 & 13
+	\end{array}\right]_{1 \times 3}$ একটি $1 \times 3$ ক্রমের সারি ম্যাট্রিক্স।
+	
+	\item \textbf{কলাম ম্যাট্রিক্স (Column Matrix):} কেবল একটি কলাম সম্বলিত ম্যাট্রিক্স কে কলাম ম্যাট্রিক্স বলে। Example: 
+	$\left[\begin{array}{c}
+	11 \\ 12 \\ 13
+	\end{array}\right]_{3 \times 1}$ একটি $3 \times 1$ আকারের কলাম ম্যাট্রিক্স।
+	
+	\item \textbf{বর্গ ম্যাট্রিক্স (Square Matrix):} কোনো ম্যাট্রিক্স এর সারি ও কলাম সংখ্যা সমান $(m=n)$ হলে তাকে বর্গ ম্যাট্রিক্স বলে। Example: 
+	$
+	\left[\begin{array}{ccc}
+	2 & 4 & 5 \\
+	5 & 6 & 8 \\
+	4 & 5 & 6
+	\end{array}\right]_{3 \times 3}
+	$ একটি $3\times3$ বর্গ ম্যাট্রিক্স।\\ 
+	\begin{tcolorbox}
+		\begin{itemize}
+			\item[$\bullet$] \textbf{মুখ্যকর্ণ (Principal Diagonal):} ম্যাট্রিক্স $(1,1)$-তম ভুক্তিগামি কর্ণকে মুখ্যকর্ণ বলে। Example: 
+			$
+			\left[\begin{array}{ccc}
+			\textcolor{red}{1} & 0 & 0 \\
+			0 & \textcolor{red}{1} & 0 \\
+			0 & 0 & \textcolor{red}{1}
+			\end{array}\right], 
+			\left[\begin{array}{cccc}
+			\textcolor{red}{1} & 0 & 0 & 0 \\
+			0 & \textcolor{red}{1} & 0 & 0 \\
+			0 & 0 & \textcolor{red}{1} & 0
+			\end{array}\right]
+			$
+			\item[$\bullet$] \textbf{গৌণকর্ণ (Anti-diagonal):} কোনো $m\times m$ ক্রমের বর্গ ম্যাট্রিক্স এর $(1,m)$ বা $(m,1)$-তম ভুক্তিগামি কর্ণকে গৌণকর্ণ বলে।\\ Example: 
+			$
+			\left[\begin{array}{ccc}
+			0 & 0 & \textcolor{red}{1} \\
+			0 & \textcolor{red}{1} & 0 \\
+			\textcolor{red}{1} & 0 & 0
+			\end{array}\right]
+			$\\
+			\item[$\bullet$] \textbf{ট্রেস (Trace):} কোনো বর্গ ম্যাট্রিক্স এর মুখ্যকর্ণের ভুক্তিগুলোর সমষ্টিকে ট্রেস বলে।\\ Example:
+			$
+			\left[\begin{array}{ccc}
+			\textcolor{red}{a_{11}} & a_{12} & a_{13} \\
+			a_{21} & \textcolor{red}{a_{22}} & a_{23} \\
+			a_{31} & a_{32} & \textcolor{red}{a_{33}}
+			\end{array}\right]
+			$ ম্যাট্রিক্সটির ট্রেস$=\textcolor{red}{a_{11}+a_{22}+a_{33}}$\\
+		\end{itemize}
+	\end{tcolorbox}
+	\item \textbf{কর্ণ ম্যাট্রিক্স (Diagonal Matrix):} যে বর্গ ম্যাট্রিক্স এর মুখ্যকর্ণের ভুক্তিগুলো ব্যতীত বাকি সকল ভুক্তিগুলো শূন্য তাকে কর্ণ ম্যাট্রিক্স বলে। \\
+	Example:
+	$\left[\begin{array}{ccc}
+	a & 0 & 0 \\
+	0 & b & 0 \\
+	0 & 0 & c
+	\end{array}\right]$ একটি কর্ণ ম্যাট্রিক্স যেখানে $a\neq b\neq c\neq 0$। 
+	 
+	\item \textbf{স্কেলার ম্যাট্রিক্স (Scalar Matrix):} কর্ণ ম্যাট্রিক্স এর অশূন্য ভুক্তিগুলো সমান হলে তাকে স্কেলার ম্যাট্রিক্স বলে। \\
+	Example: 
+	$\left[\begin{array}{ccc}
+	k & 0 & 0 \\
+	0 & k & 0 \\
+	0 & 0 & k
+	\end{array}\right]$ একটি কর্ণ ম্যাট্রিক্স যেখানে $k\neq 0$।
+	\item \textbf{অভেদক ম্যাট্রিক্স (Identity Matrix):} স্কেলার ম্যাট্রিক্স এর অশূন্য ভুক্তিগুলোর মান $1$ হলে তাকে অভেদক ম্যাট্রিক্স বলে। একে $I_{n}$ দ্বারা প্রকাশ করা হয়।\\ Example: 
+	$
+	I_{n}=\left[\begin{array}{cccc}
+	1 & 0 & \cdots & 0 \\
+	0 & 1 & \cdots & 0 \\
+	\cdots & \cdots & \cdots & \cdots\\
+	0 & 0 & \cdots & 1 
+	\end{array}\right],
+	I_{2}=\left[\begin{array}{cc}
+	1 & 0 \\
+	0 & 1
+	\end{array}\right],
+	I_{3}=\left[\begin{array}{ccc}
+	1 & 0 & 0\\
+	0 & 1 & 0\\
+	0 & 0 & 1
+	\end{array}\right]
+	$।
+	
+	\item \textbf{শূন্য ম্যাট্রিক্স (Null Matrix):} যে ম্যাট্রিক্স এর সকল ভুক্তি শূন্য তাকে শূন্য ম্যাট্রিক্স বলে। Example: 
+	$\left[\begin{array}{cc}
+	0 & 0 \\
+	0 & 0
+	\end{array}\right], 
+	\left[\begin{array}{ccc}
+	0 & 0 & 0\\
+	0 & 0 & 0\\
+	0 & 0 & 0
+	\end{array}\right]$।
+	
+	\item \textbf{ত্রিভুজাকার ম্যাট্রিক্স (Triangular Matrix):} যে বর্গ ম্যাট্রিক্স এর মুখ্য কর্ণের নিচে বা উপরের ভুক্তিগুলো শূন্য তাকে ত্রিভুজাকার ম্যাট্রিক্স বলে।\\ Example: 
+	$
+	\left[\begin{array}{ccc}
+	\textcolor{red}{2} & 0 & 0 \\
+	\textcolor{red}{6} & \textcolor{red}{9} & 0 \\
+	\textcolor{red}{9} & \textcolor{red}{6} & \textcolor{red}{6}
+	\end{array}\right], 
+	\left[\begin{array}{ccc}
+	\textcolor{red}{2} & \textcolor{red}{1} & \textcolor{red}{6} \\
+	0 & \textcolor{red}{9} & \textcolor{red}{5} \\
+	0 & 0 & \textcolor{red}{3}
+	\end{array}\right]
+	$।
+	\begin{tcolorbox}
+		\begin{itemize}
+			\item[$\bullet$] \textbf{ ঊর্ধ্ব ত্রিভুজাকার ম্যাট্রিক্স (Upper Triangular Matrix):} বর্গ ম্যাট্রিক্স এর মুখ্য কর্ণের নিচের সকল ভুক্তি শূন্য।\\ Example: 
+			$A=[a_{ij}]=
+			\left[\begin{array}{ccc}
+			\textcolor{red}{2} & \textcolor{red}{1} & \textcolor{red}{6} \\
+			0 & \textcolor{red}{9} & \textcolor{red}{5} \\
+			0 & 0 & \textcolor{red}{3}
+			\end{array}\right]$ যেখানে $a_{ij}=0$ এবং $i>j$। 
+			\item[$\bullet$] \textbf{ নিম্ন ত্রিভুজাকার ম্যাট্রিক্স (Lower Triangular Matrix):} বর্গ ম্যাট্রিক্স এর মুখ্য কর্ণের উপরের সকল ভুক্তি শূন্য।\\ Example: 
+			$A=[a_{ij}]=\left[\begin{array}{ccc}
+			\textcolor{red}{2} & 0 & 0 \\
+			\textcolor{red}{6} & \textcolor{red}{9} & 0 \\
+			\textcolor{red}{9} & \textcolor{red}{6} & \textcolor{red}{6}
+			\end{array}\right]$ যেখানে $a_{ij}=0$ এবং $i<j$। 
+		\end{itemize}
+	\end{tcolorbox}
+
+	\item \textbf{বিম্ব ম্যাট্রিক্স (Transpose Matrix):} কোনো ম্যাট্রিক্স $A$ এর কলামগুলোকে সারি এবং সারিগুলোকে কলাম এ পরিনত করলে যে ম্যাট্রিক্স পাওয়া যায় তাকে ঐ ম্যাট্রিক্স এর বিম্ব ম্যাট্রিক্স বলে যাকে $A^T$ দ্বারা প্রকাশ করা হয়।\\ Example: 
+	$A=\left[\begin{array}{ccc}
+	2 & 5 & 8 \\
+	6 & 9 & 0 \\
+	9 & 6 & 6
+	\end{array}\right]$ হলে 
+	$A^T=\left[\begin{array}{ccc}
+	2 & 6 & 9 \\
+	5 & 9 & 6 \\
+	8 & 0 & 6
+	\end{array}\right]$।
+	\begin{figure}[h]
+		\centering
+		\input{images/matrix-fig-2}
+		\caption{বিম্ব ম্যাট্রিক্স}
+		\label{mat-fig-2}
+	\end{figure}
+	
+	\item \textbf{প্রতিসম ম্যাট্রিক্স (Symmetric Matrix):} কোনো বর্গ ম্যাট্রিক্স $A=[a_{ij}]$ এবং এর ট্রান্সপজ ম্যাট্রিক্স পরস্পর সমান হলে অর্থাৎ $a_{ij}=a_{ji}$ তাকে প্রতিসম ম্যাট্রিক্স বলা হয়।\\ Example: 
+	$A=\left[\begin{array}{rrr}
+	5 & 2 & 1 \\
+	2 & 6 & -1 \\
+	1 & -1 & 4
+	\end{array}\right]
+	$ হলে 
+	$A^T=\left[\begin{array}{rrr}
+	5 & 2 & 1 \\
+	2 & 6 & -1 \\
+	1 & -1 & 4
+	\end{array}\right]$ এখানে $A=A^T$। সুতরাং $A$ একটি প্রতিসম ম্যাট্রিক্স।
+	\begin{figure}[h]
+		\centering
+		\input{images/matrix-fig-3}
+		\caption{প্রতিসম ম্যাট্রিক্স}
+		\label{mat-fig-3}
+	\end{figure}
+	
+	\item \textbf{বিপ্রতিসম ম্যাট্রিক্স (Skew-Symmetric Matrix):} একটি বর্গ ম্যাট্রিক্স $A=[a_{ij}]$ এর জন্য $A=-A^T$ হলে অর্থাৎ $a_{ij}=-a_{ji}$ তাকে বিপ্রতিসম ম্যাট্রিক্স বলে। Example: 
+	$A=\left[\begin{array}{rrr}
+	0 & 2 & 1 \\
+	-2 & 0 & -1 \\
+	-1 & 1 & 0
+	\end{array}\right]$ হলে 
+	$A^T=\left[\begin{array}{rrr}
+	0 & -2 & -1 \\
+	2 & 0 & 1 \\
+	1 & -1 & 0
+	\end{array}\right]$ যেখানে $A=-A^T$। সুতরাং $A$ একটি বিপ্রতিসম ম্যাট্রিক্স।
+	\begin{figure}[h]
+		\centering
+		\input{images/matrix-fig-4}
+		\caption{বিপ্রতিসম ম্যাট্রিক্স}
+		\label{mat-fig-4}
+	\end{figure}
+	\begin{tcolorbox}
+		\textbf{Note:} বিপ্রতিসম ম্যাট্রিক্স এর মুখ্য কর্ণের ভুক্তিগুলো শূন্য হয়।
+	\end{tcolorbox}
+
+	\item \textbf{হারমিশিয়ান ম্যাট্রিক্স (Hermitian Matrix):} কোনো ম্যাট্রিক্স $A=[a_{ij}]$ কে Hermitian Matrix বলা হবে যদি $a_{ij}=\overline{a_{ji}}$ হয় যেখানে $\overline{a_{ij}}$ দ্বারা $(i,j)$-তম ভুক্তির অনুবন্ধী জটিল সংখ্যা বুঝায়।\\ Example: $A=\left[\begin{array}{ccc}
+		2 & 2+i & 4 \\
+		2-i & 3 & i \\
+		4 & -i & 1
+		\end{array}\right]
+		$।
+	\begin{tcolorbox}
+		\textbf{Note:}\\
+		যেকোনো জটিল সংখ্যাকে $x=a+ib$ আকারে লেখা যায়।\\যেখানে, $a=$বাস্তব অংশ ও $b=$জটিল অংশ।\\ $x$ এর অনুবন্ধী জটিল সংখ্যা হবে $\bar{x}=a-ib$। \\অর্থাৎ জটিল অংশের চিহ্ন উল্টিয়ে দিলেই অনুবন্ধী পাওয়া যায়।\\ Example: 
+		\begin{itemize}
+			\item[$(i)$] $x=2+i$ হলে $\bar{x}=2-i$
+			\item[$(ii)$] $x=2-3i$ হলে $\bar{x}=2+3i$
+			\item[$(iii)$] $x=2$ হলে $\bar{x}=2$ (বাস্তব অংশের চিহ্ন পরিবর্তন হয় না)
+		\end{itemize}
+		(বিস্তারিত উচ্চতর গণিত ২য় পত্র জটিল সংখ্যা অধ্যায়) 
+	\end{tcolorbox}	
+
+	\item \textbf{স্কিউ-হারমিশিয়ান ম্যাট্রিক্স (Skew-Hermitian Matrix):} কোনো ম্যাট্রিক্স $A=[a_{ij}]$ কে Skew-Hermitian Matrix বলা হবে যদি $a_{ij}=-\overline{a_{ji}}$ হয় যেখানে $\overline{a_{ij}}$ দ্বারা $(i,j)$-তম ভুক্তির অনুবন্ধী জটিল সংখ্যা বুঝায়।\\ Example: 
+	$A=\left[\begin{array}{ccc}
+	i & 2+i & 3-4i \\
+	-2+i & 0 & 4+5i \\
+	-3-4i & -4+5i & 3i
+	\end{array}\right]
+	$।
+	\\
+	\item \textbf{উপ-ম্যাট্রিক্স (Sub-matrix):} কোনো ম্যাট্রিক্স এর যেকোনো সংখ্যক সারি ও কলাম এর ভুক্তি বাদ দিয়ে গঠিত ম্যাট্রিক্সকে মূল ম্যাট্রিক্স এর উপ-ম্যাট্রিক্স বলে।\\ Example: 
+	$A=\left[\begin{array}{ccc}
+	1 & 2 & 3 \\
+	4 & 5 & 6 \\
+	7 & 8 & 9
+	\end{array}\right]$ ম্যাট্রিক্স এর উপ-ম্যাট্রিক্স\\ 
+	$\left[\begin{array}{cc}
+	1 & 2 \\
+	4 & 5 
+	\end{array}\right], 
+	\left[\begin{array}{cc}
+	2 & 3 \\
+	5 & 6 
+	\end{array}\right], 
+	\left[\begin{array}{cc}
+	1 & 2 \\
+	4 & 5 \\
+	7 & 8 
+	\end{array}\right], 
+	\left[\begin{array}{ccc}
+	1 & 2 & 3\\
+	4 & 5 & 6
+	\end{array}\right]$।
+	\\
+	\item \textbf{বর্গ ম্যাট্রিক্সের ঘাতের উপর ভিত্তি করে কিছু প্রকারভেদঃ}
+	\begin{tcolorbox}
+		কোনো ম্যাট্রিক্স $A$ এর ঘাত $k$ বলতে বুঝায় ম্যাট্রিক্সটিকে $k$ সংখ্যকবার গুণ করা।
+		অর্থাৎ $A^k=A.A\dots k\text{ সংখ্যক}$
+	\end{tcolorbox}
+	\begin{itemize}
+		\item[$(i)$] \textbf{পিরিওডিক ম্যাট্রিক্স (Periodic Matrix):}\\ $A^k=A$ হলে, $A$ একটি পিরিওডিক ম্যাট্রিক্স যার পিরিয়ড $k$।\\ $k=2$ একে সমঘাতি ম্যাট্রিক্স (Idempotent Matrix) বলা হয়।\\ Example: $A=\left[\begin{array}{cc}
+		1 & 0 \\
+		0 & 1
+		\end{array}\right]$ কারণ \\
+		$A^2=A.A=\left[\begin{array}{cc}
+		1 & 0 \\
+		0 & 1
+		\end{array}\right]=A$ 
+		
+		\item[$(ii)$] \textbf{অভেদঘাতি ম্যাট্রিক্স (Involutory Matrix):}\\ $A^2=A.A=I$ হলে, $A$ একটি অভেদঘাতি ম্যাট্রিক্স। \\Example: $A=\left[\begin{array}{rr}
+		2 & 3 \\
+		-1 & -2
+		\end{array}\right]$ কারণ \\
+		$A^2=A.A=\left[\begin{array}{rr}
+		1 & 0 \\
+		0 & 1
+		\end{array}\right]=I$
+		
+		\item[$(iii)$] \textbf{শূন্যঘাতি ম্যাট্রিক্স (Nilpotent Matrix):}\\ ক্ষুদ্রতম স্বাভাবিক সংখ্যা $k$ এর জন্য $A^k$ শূন্য ম্যাট্রিক্স হলে $A$ একটি শুন্নঘাতি ম্যাট্রিক্স। এই $k$ কে শুন্নঘাতির সূচক বা ধাত (index) বলে। \\ Example: $A=\left[\begin{array}{cc}
+		1 & -1 \\
+		1 & -1
+		\end{array}\right]$ কারণ\\
+		$A^2=A.A=\left[\begin{array}{cc}
+		0 & 0 \\
+		0 & 0
+		\end{array}\right]$; \\ সুতরাং $A$ একটি শুন্নঘাতি ম্যাট্রিক্স যার সূচক 2।
+	\end{itemize}  
+\end{enumerate}
+\section{ম্যাট্রিক্স এর সমতা (Equality of Matrices)}\label{section-3}
+দুইটি ম্যাট্রিক্স $A$ ও $B$ সমান হবে যদি ও কেবল যদি,
+\begin{enumerate}
+	\item $A$ ও $B$ এর ক্রম (order) সমান হয়।
+	\item $A$ ও $B$ এর অনুরুপ ভুক্তিগুলো সমান হয়।
+\end{enumerate}
+\begin{figure}[h]
+	\centering
+	\input{images/matrix-equality}
+	\caption{ম্যাট্রিক্স এর সমতা}
+	\label{mat-eq}
+\end{figure}
+
+
+\section{ম্যাট্রিক্স এর যোগ-বিয়োগ \\(Addition \& Subtraction of Matrices)}
+যদি দুইটি একই ক্রমের ম্যাট্রিক্স 
+$\color{red} A=
+\left[\begin{array}{ccc}
+a_1 & a_2 & a_3\\
+a_4 & a_5 & a_6\\
+a_7 & a_8 & a_9
+\end{array}\right]$ ও $\color{blue}B=
+\left[\begin{array}{ccc}
+b_1 & b_2 & b_3\\
+b_4 & b_5 & b_6\\
+b_7 & b_8 & b_9
+\end{array}\right]$ এর জন্য $\textcolor{red}{A}\pm \textcolor{blue}{B}=
+\def \ra#1b#2{\textcolor{red}{a_{#1}}\pm\textcolor{blue}{b_{#2}}}
+\left[\begin{array}{ccc}
+\ra1b1 & \ra2b2 & \ra3b3\\
+\ra4b4 & \ra5b5 & \ra6b6\\
+\ra7b7 & \ra8b8 & \ra9b9
+\end{array}\right]$।\\ Example: $
+A=\left[\begin{array}{rr}
+2 & -1 \\
+3 & 6 
+\end{array}\right]
+$ ও $B=\left[\begin{array}{rr}
+6 & 0 \\
+5 & 3
+\end{array}\right]$ হলে, $$\therefore A+B=\left[\begin{array}{rr}
+2 & -1 \\
+3 & 6 
+\end{array}\right]+\left[\begin{array}{rr}
+6 & 0 \\
+5 & 3
+\end{array}\right]=\left[\begin{array}{rr}
+2+6 & -1+0 \\
+3+5 & 6+3
+\end{array}\right]=\left[\begin{array}{rr}
+8 & -1\\
+8 & 9
+\end{array}\right]$$ 
+$$\therefore A-B=\left[\begin{array}{rr}
+2 & -1\\
+3 & 6
+\end{array}\right]-\left[\begin{array}{rr}
+6 & 0\\
+5 & 3
+\end{array}\right]=\left[\begin{array}{rr}
+2-6 & -1-0 \\
+3-5 & 6-3 
+\end{array}\right]=\left[\begin{array}{rr}
+-4 & -1\\
+-2 & 3
+\end{array}\right]$$
+\newpage
+\section{ম্যাট্রিক্স এর গুণন (Multplication of Matrices)}
+\subsection{ম্যাট্রিক্সের স্কেলার গুণিতক (Scalar Multiple of a Matrix)}\label{section-5-1}
+কোনো ম্যাট্রিক্স $A$ কে কোনো একটি ধ্রুব সংখ্যা $k$ দ্বারা গুন করলে $kA$ ম্যাট্রিক্স এর প্রতিটি ভুক্তি $k$ দ্বারা গুন করতে হবে।\\ Example: 
+$A=\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right]$ হলে 
+$\therefore kA=\left[\begin{array}{ccc}
+ka_{11} & ka_{12} & ka_{13} \\
+ka_{21} & ka_{22} & ka_{23} \\
+ka_{31} & ka_{32} & ka_{33}
+\end{array}\right]$।
+\subsection{দুইটি ম্যাট্রিক্স এর গুণন (Multiplication of Two Matrices)}
+\begin{tcolorbox}
+	দুইটি ম্যাট্রিক্স $A$ ও $B$ গুণের শর্তঃ
+	\begin{itemize}
+		\item[$\diamond$] \textbf{$A$ এর কলাম সংখ্যা ও $B$ এর সারি সংখ্যা সমান হতে হবে।}
+	\end{itemize}
+	যদি $A$ এর ক্রম $m\times n$ এবং $B$ এর ক্রম $n\times l$ হয় তবে $AB$ সংজ্ঞায়িত কিন্তু $BA$ সংজ্ঞায়িত নয় কারণ $l\neq m$।
+\end{tcolorbox}
+\subsubsection{ম্যাট্রিক্স গুণের নিয়ম}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.31]{images/matrix-mul.png}
+	\caption{ম্যাট্রিক্স এর গুণন}
+	\label{fig:matrix_mul}
+\end{figure}
+\begin{enumerate}
+	\item $A$ ম্যাট্রিক্সের প্রথম সারির প্রতিটি ভুক্তি $B$ ম্যাট্রিক্সের প্রথম কলাম এর অনুরূপ ভুক্তির সাথে গুণ করতে হবে। এই গুণফলগুলির বীজগাণিতিক সমষ্টি হবে $AB$ ম্যাট্রিক্স এর প্রথম সারির প্রথম ভুক্তি। অনুরুপভাবে $A$ ম্যাট্রিক্সের ১ম সারির ভুক্তিগুলোকে যথাক্রমে $B$ ম্যাট্রিক্সের ২য় কলামের অনুরূপ ভুক্তিগুলোর সাথে গুণ করে যোগ করলে $AB$ ম্যাট্রিক্স এর ১ম সারির ২য় ভুক্তিটি পাওয়া যাবে। এভাবে অগ্রসর হয়ে $AB$ ম্যাট্রিক্সের ১ম সারির সবগুল ভুক্তি বের করতে হবে। (চিত্র \ref{fig:matrix_mul})
+	\item নিয়ম ১ এর প্রক্রিয়ায় $AB$ এর সবগুল সারি নির্ণয় করতে হবে।	
+\end{enumerate}
+\newpage
+Example: 
+$\color{red} A=\left[\begin{array}{rrr}
+1 & 0 & -2 \\
+3 & -2 & -1
+\end{array}\right]$ এবং 
+$\color{blue} B=\left[\begin{array}{rr}
+-1 & 3 \\
+4 & 0 \\
+2 & 6
+\end{array}\right]$ হলে $AB$ ও $BA$ নির্ণয় কর।\\
+Solution: যেহেতু $A$ এর ক্রম $2\times 3$ এবং $B$ এর ক্রম $3\times 2$ তাই $AB$ এবং $BA$ উভয় সংজ্ঞায়িত। \\  
+$\therefore AB=\color{red}\left[\begin{array}{rrr}
+1 & 0 & -2 \\
+3 & -2 & -1
+\end{array}\right]\color{blue}\left[\begin{array}{rr}
+-1 & 3 \\
+4 & 0 \\
+2 & 6
+\end{array}\right]$\\
+$ \def \rb#1x#2{\textcolor{red}{#1}\times\textcolor{blue}{#2}}
+=\left[\begin{array}{rrr}
+\rb1x{-1} + \rb0x4 + \rb-2x2 & \rb1x3 + \rb0x0 + \rb-2x6 \\
+\rb3x{-1} + \rb-2x4 + \rb-1x2 & \rb3x3 + \rb-2x0 + \rb-1x6 \\
+\end{array}\right]$\\
+$=\left[\begin{array}{rr}
+-5 & -9 \\
+-13 & 3
+\end{array}\right]$\\
+$\therefore BA=\color{blue}\left[\begin{array}{rr}
+-1 & 3 \\
+4 & 0 \\
+2 & 6
+\end{array}\right]\color{red}\left[\begin{array}{rrr}
+1 & 0 & -2 \\
+3 & -2 & -1
+\end{array}\right]$\\
+$ \def \br#1x#2{\textcolor{blue}{#1}\times\textcolor{red}{#2}}
+=\left[\begin{array}{ccc}
+\br-1x1+\br3x3 & \br-1x0+\br3x{-2} & \br-1x{-2}+\br3x{-1} \\
+\br4x1+\br0x3 & \br4x0+\br0x{-2} & \br4x{-2}+\br0x{-1} \\
+\br2x1+\br6x3 & \br2x0+\br6x{-2} & \br2x{-2}+\br6x{-1} 
+\end{array}\right]$\\
+$=\left[\begin{array}{rrr}
+8 & -6 & -1 \\
+4 & 0 & -8 \\
+20 & -12 & -10
+\end{array}\right]$
+\begin{tcolorbox}
+	\textbf{Note:} $A$ ও $B$ এর ক্রম যথাক্রমে $m\times n$ ও $n\times l$ হলে $AB$ এর ক্রম হবে $(m\times l)$
+\end{tcolorbox}
+\section{নির্ণায়ক এর সংজ্ঞা (Definition of Determinant)}
+প্রত্যেক বর্গ ম্যাট্রিক্স সংশ্লিষ্ট একটি গুরুত্বপূর্ণ সংখারাশি রয়েছে যাকে ম্যাট্রিক্সটির নির্ণায়ক (Determinant) বলা হয়। কোনো ম্যাট্রিক্স 
+$A=\left[\begin{array}{cc}
+a_{1} & b_{1} \\
+a_{2} & b_{2}
+\end{array}\right]$ হলে এর নির্ণায়ককে $|A|$ বা $det(A)=\left|\begin{array}{cc}
+a_{1} & b_{1} \\
+a_{2} & b_{2}
+\end{array}\right|$ দ্বারা প্রকাশ করা হয় যার মান $a_{1}b_{2}-a_{2}b_{1}$। অনুরুপভাবে 
+$B=\left[\begin{array}{ccc}
+a_{1} & b_{1} & c_{1} \\
+a_{2} & b_{2} & c_{2} \\
+a_{3} & b_{3} & c_{3}
+\end{array}\right]$ ম্যাট্রিক্সটির নির্ণায়ক $|B|=det(B)=\left|\begin{array}{ccc}
+a_{1} & b_{1} & c_{1} \\
+a_{2} & b_{2} & c_{2} \\
+a_{3} & b_{3} & c_{3}
+\end{array}\right|$। 
+\begin{tcolorbox}
+	\begin{itemize}
+		\item[$\bullet$] \textbf{নির্ণায়ক এর মুখ্যপদঃ} নির্ণায়ক এর মুখ্যকর্ণ বরাবর ভুক্তিগুলোর গুনফল।\\ Example: $|A|=\left|\begin{array}{ccc}
+		\textcolor{red}{a_{1}} & b_{1} & c_{1} \\
+		a_{2} & \textcolor{red}{b_{2}} & c_{2} \\
+		a_{3} & b_{3} & \textcolor{red}{c_{3}}
+		\end{array}\right|$ এর জন্য মুখ্যপদ  $\textcolor{red}{a_{1}b_{2}c_{3}}$।
+		\item[$\bullet$] \textbf{নির্ণায়ক এর মাধ্যমিক পদঃ} নির্ণায়ক এর গৌণকর্ণ বরাবর ভুক্তিগুলোর গুনফল। Example: $|A|=\left|\begin{array}{ccc}
+		a_{1} & b_{1} & \textcolor{red}{c_{1}} \\
+		a_{2} & \textcolor{red}{b_{2}} & c_{2} \\
+		\textcolor{red}{a_{3}} & b_{3} & c_{3}
+		\end{array}\right|$ এর জন্য মাধ্যমিক পদ $\textcolor{red}{a_{3}b_{2}c_{1}}$। 
+	\end{itemize}
+\end{tcolorbox}
+\subsection{নির্ণায়ক এর অনুরাশি ও সহগুণক (Minor \& Co-factor of determinant)}
+\begin{itemize}
+	\item[$\bullet$] \textbf{অনুরাশি (Minor):} কোনো নির্ণায়ক $|A|$ এর $(i,j)$-তম ভুক্তি $a_{ij}$ যে সারি ও যে কলামে অবস্থিত সে সারি $(i)$ ও সে কলাম $(j)$ ব্যাতীত অবশিষ্ট ভুক্তি দ্বারা গঠিত নির্ণায়ককে উক্ত ভুক্তির অনুরাশি (Minor) বলে।\\ 
+		\begin{figure}[h]
+		\centering
+		\input{images/matrix-fig-5}
+		\caption{অনুরাশি (Minor)}
+		\label{mat-fig-5}
+	\end{figure}
+	\newpage
+	Example: \\ $\left|\begin{array}{cc}
+	a_{11} & a_{12} \\
+	a_{21} & a_{22}
+	\end{array}\right|$ এর জন্য $a_{11}$ এর বা $(1,1)$-তম ভুক্তির অনুরাশি $|a_{22}|=a_{22}$।\\ 
+	আবার
+	$\left|\begin{array}{ccc}
+	a_{11} & a_{12} & a_{13} \\
+	a_{21} & a_{22} & a_{23} \\
+	a_{31} & a_{32} & a_{33}
+	\end{array}\right|$ এর জন্য $a_{11}$ এর বা \\$(1,1)$-তম ভুক্তির অনুরাশি $\left|\begin{array}{cc}
+	a_{22} & a_{23} \\
+	a_{32} & a_{33}
+	\end{array}\right|=a_{22}a_{33}-a_{23}a_{32}$ 
+	\begin{tcolorbox}
+		\textbf{Note:} একটিমাত্র ভুক্তি সম্বলিত নির্ণায়ক এর মান ঐ ভুক্তির মানের সমান।
+	\end{tcolorbox}
+ 	\item[$\bullet$] \textbf{সহগুণক (Co-factor):} কোনো নির্ণায়ক $|A|$ এর কোনো ভুক্তি $a_{ij}$ এর যথাযথ চিহ্নযুক্ত অনুরাশিকে ঐ ভুক্তির সহগুণক (Co-factor) বলে যাকে $A_{ij}$ দ্বারা প্রকাশ করা হয়। $(i,j)$-তম ভুক্তি $a_{ij}$ এর চিহ্ন হবে $(-1)^{i+j}$।\\
+ 	Example:\\ একটি $2\times 2$ নির্ণায়ক
+ 	$D\equiv\left|\begin{array}{cc}
+ 	d_{11} & d_{12} \\
+ 	d_{21} & d_{22}
+ 	\end{array}\right|$ এর ভুক্তিগুলোর সহগুণকগুলো যথাক্রমে \\
+ 	$D_{11}=(-1)^{1+1}\left|d_{22}\right|=d_{22}$ \\
+ 	$D_{12}=(-1)^{1+2}\left|d_{21}\right|=-d_{21}$ \\
+ 	$D_{21}=(-1)^{2+1}\left|d_{12}\right|=-d_{12}$ \\
+ 	$D_{22}=(-1)^{2+2}\left|d_{11}\right|=d_{11}$ \\
+ 	আবার একটি $3\times 3$ নির্ণায়ক 
+ 	$A\equiv\left|\begin{array}{ccc}
+ 	a_{11} & a_{12} & a_{13} \\
+ 	a_{21} & a_{22} & a_{23} \\
+ 	a_{31} & a_{32} & a_{33}
+ 	\end{array}\right|$ এর ভুক্তিগুলোর সহগুণকগুলো যথাক্রমে \\
+ 	$A_{11}=(-1)^{1+1}\left|\begin{array}{cc}
+ 	a_{22} & a_{23} \\
+ 	a_{32} & a_{33}
+ 	\end{array}\right|=\left|\begin{array}{cc}
+ 	a_{22} & a_{23} \\
+ 	a_{32} & a_{33}
+ 	\end{array}\right|=a_{22}a_{33}-a_{32}a_{23}$ \\
+ 	$A_{12}=(-1)^{1+2}\left|\begin{array}{cc}
+ 	a_{21} & a_{23} \\
+ 	a_{31} & a_{33}
+ 	\end{array}\right|=-\left|\begin{array}{cc}
+ 	a_{21} & a_{23} \\
+ 	a_{31} & a_{33}
+ 	\end{array}\right|=-(a_{21}a_{33}-a_{31}a_{23})$ \\
+ 	$A_{13}=(-1)^{1+3}\left|\begin{array}{cc}
+ 	a_{21} & a_{22} \\
+ 	a_{31} & a_{32}
+ 	\end{array}\right|=\left|\begin{array}{cc}
+ 	a_{21} & a_{22} \\
+ 	a_{31} & a_{32}
+ 	\end{array}\right|=a_{21}a_{32}-a_{31}a_{22}$ \\
+ 	$A_{21}=(-1)^{2+1}\left|\begin{array}{cc}
+ 	a_{12} & a_{13} \\
+ 	a_{32} & a_{33}
+ 	\end{array}\right|=-\left|\begin{array}{cc}
+ 	a_{12} & a_{13} \\
+ 	a_{32} & a_{33}
+ 	\end{array}\right|=-(a_{12}a_{33}-a_{32}a_{13})$ \\
+ 	$A_{22}=(-1)^{2+2}\left|\begin{array}{cc}
+ 	a_{11} & a_{13} \\
+ 	a_{31} & a_{33}
+ 	\end{array}\right|=\left|\begin{array}{cc}
+ 	a_{11} & a_{13} \\
+ 	a_{31} & a_{33}
+ 	\end{array}\right|=a_{11}a_{33}-a_{31}a_{13}$ \\
+ 	$A_{23}=(-1)^{2+3}\left|\begin{array}{cc}
+ 	a_{11} & a_{12} \\
+ 	a_{31} & a_{32}
+ 	\end{array}\right|=-\left|\begin{array}{cc}
+ 	a_{11} & a_{12} \\
+ 	a_{31} & a_{32}
+ 	\end{array}\right|=-(a_{11}a_{32}-a_{31}a_{12})$ \\
+ 	$A_{31}=(-1)^{3+1}\left|\begin{array}{cc}
+ 	a_{12} & a_{13} \\
+ 	a_{22} & a_{23}
+ 	\end{array}\right|=\left|\begin{array}{cc}
+ 	a_{12} & a_{13} \\
+ 	a_{22} & a_{23}
+ 	\end{array}\right|=a_{12}a_{23}-a_{22}a_{13}$ \\
+ 	$A_{32}=(-1)^{3+2}\left|\begin{array}{cc}
+ 	a_{11} & a_{13} \\
+ 	a_{21} & a_{23}
+ 	\end{array}\right|=-\left|\begin{array}{cc}
+ 	a_{11} & a_{13} \\
+ 	a_{21} & a_{23}
+ 	\end{array}\right|=-(a_{11}a_{23}-a_{21}a_{13})$ \\
+ 	$A_{33}=(-1)^{3+3}\left|\begin{array}{cc}
+ 	a_{11} & a_{12} \\
+ 	a_{21} & a_{22}
+ 	\end{array}\right|=\left|\begin{array}{cc}
+ 	a_{11} & a_{12} \\
+ 	a_{21} & a_{22}
+ 	\end{array}\right|=a_{11}a_{22}-a_{21}a_{12}$ \\
+ 	\begin{tcolorbox}
+ 		\textbf{Note:}
+ 		\begin{itemize}
+ 			\item[$\bullet$] $(i+j)$ জোড় হলে চিহ্ন $(+)$ এবং বিজোড় হলে চিহ্ন $(-)$ \\
+ 			\item[$\bullet$] $\left|\begin{array}{cc}
+ 				+ & - \\
+ 				- & +
+ 			\end{array}\right|_{2\times 2}, \left|\begin{array}{ccc}
+ 			+ & - & + \\
+ 			- & + & - \\
+ 			+ & - & +
+ 			\end{array}\right|_{3\times 3}, \left|\begin{array}{cccc}
+ 			+ & - & + & -\\
+ 			- & + & - & +\\
+ 			+ & - & + & - \\
+ 			- & + & - & +
+ 			\end{array}\right|_{4\times 4} $
+ 		\end{itemize}
+ 	\end{tcolorbox}
+\end{itemize}
+
+\section{নির্ণায়ক এর মান ও বিস্তৃতি \\(Value \& Expansion of Determinant)}\label{section-7}
+কোনো নির্ণায়ক এর যেকোনো একটি সারি বা কলামের ভুক্তিসমূহ ও তাদের নিজ নিজ সহগুণকের গুণফলের সমষ্টিই নির্ণায়ক এর মান। \\
+Example:\\
+$
+A \equiv \left|\begin{array}{cc}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right|=a_{11}A_{11}+a_{12}A_{12}=a_{11}a_{22}-a_{21}a_{12}
+$
+\\আবার,\\ 
+$
+	A\equiv\left|\begin{array}{ccc}
+	a_{11} & a_{12} & a_{13} \\
+	a_{21} & a_{22} & a_{23} \\
+	a_{31} & a_{32} & a_{33}
+	\end{array}\right|\\ \\
+	=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}\\ \\
+	=a_{11}\left|\begin{array}{cc}
+	a_{22} & a_{23} \\
+	a_{32} & a_{33}
+	\end{array}\right|+a_{12}\times (-)\left|\begin{array}{cc}
+	a_{21} & a_{23} \\
+	a_{31} & a_{33}
+	\end{array}\right|+a_{13}\left|\begin{array}{cc}
+	a_{21} & a_{22} \\
+	a_{31} & a_{32}
+	\end{array}\right|
+$
+\subsection{সহগুণকের মাধ্যমে নির্ণায়ক এর বিস্তৃতি \\(Expansion of Determinant using Co-factor)}\label{exp-co-fact}
+$D\equiv\left|\begin{array}{ccc}
+a_1 & b_1 & c_1 \\
+a_2 & b_2 & c_2 \\
+a_3 & b_3 & c_3
+\end{array}\right|$ নির্ণায়ক এর প্রথম সারির $a_1, b_1, c_1$ এর সহগুণক যথাক্রমে $A_1, B_1, C_1$। $\therefore D=a_1A_1+b_1B_1+c_1C_1$ (১ম সারি বরাবর বিস্তৃতি)\\
+অনুরুপভাবে 
+\begin{align*}
+D &=a_2A_2+b_2B_2+c_2C_2 \hspace{5pt} & \text{ (২য় সারি বরাবর বিস্তৃতি)}\\
+&=a_3A_3+b_3B_3+c_3C_3 \hspace{5pt} & \text{ (৩য় সারি বরাবর বিস্তৃতি)}\\
+&=a_1A_1+a_2A_2+a_3A_3 \hspace{5pt} & \text{ (১ম কলাম বরাবর বিস্তৃতি)}\\
+&=b_1B_1+b_2B_2+b_3B_3 \hspace{5pt} & \text{ (২য় কলাম বরাবর বিস্তৃতি)}\\
+&=c_1C_1+c_2C_2+c_3C_3 \hspace{5pt} & \text{ (৩য় কলাম বরাবর বিস্তৃতি)}
+\end{align*}
+\subsection{সারাস চিত্রের মাধ্যমে নির্ণায়কের বিস্তৃতি \\(Expansion of Determinant Using Sarrus Diagram)}\label{sec-sarrus}
+\begin{figure}[h]
+	\centering
+	\include{images/sarrus-dia}
+	\caption{$3\times 3$ নির্ণায়কের সারাস চিত্র}
+	\label{fig:sarrus}
+\end{figure}
+কোনো ম্যাট্রিক্স 
+$\left|\begin{array}{ccc}
+a_1 & b_1 & c_1 \\
+a_2 & b_2 & c_2 \\
+a_3 & b_3 & c_3
+\end{array}\right|$ এর মান $D$ দ্বারা সূচিত হলে সারাস চিত্র (চিত্র \ref{fig:sarrus}) অনুযায়ী লাল রেখা বরাবর গুণ করলে $(+)$ চিহ্নযুক্ত পদগুলো পাওয়া যায় এবং নীল রেখাগুলো বরাবর গুণ করলে $(-)$ চিহ্নযুক্ত পদগুলো পাওয়া যায়।\\
+$D=\textcolor{red}{a_1b_2c_3+b_1c_2a_3+c_1a_2b_3}-(\textcolor{blue}{a_3b_2c_1+b_3c_2a_1+c_3a_2b_1})$
+
+\section{নির্ণায়ক এর ধর্মাবলী (Properties of Determinant)}\label{section-8} 
+\begin{enumerate}
+	\item \textbf{নির্ণায়ক এর কোনো কলাম বা সারির প্রতিটি ভুক্তি শূন্য হলে নির্ণায়ক এর মান শূন্য হবে।}\label{prop-1}
+
+	$\left|\begin{array}{ccc}
+	0 & b_1 & c_1 \\
+	0 & b_2 & c_2 \\
+	0 & b_3 & c_3
+	\end{array}\right|=0, 
+	\left|\begin{array}{ccc}
+	0 & 0 & 0 \\
+	a_2 & b_2 & c_2 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|=0$
+
+	\item \textbf{নির্ণায়ক এর সারিকে কলাম এবং কলামকে সারিতে পরিবর্তন করলে নির্ণায়ক এর মান একই থাকে।}\label{prop-2}
+
+	$\left|\begin{array}{ccc}
+		a_1 & b_1 & c_1 \\
+		a_2 & b_2 & c_2 \\
+		a_3 & b_3 & c_3
+	\end{array}\right|=\left|\begin{array}{ccc}
+	a_1 & a_2 & a_3 \\
+	b_1 & b_2 & b_3 \\
+	c_1 & c_2 & c_3
+	\end{array}\right|$
+	
+
+	\item \textbf{নির্ণায়কের দুইটি সারি অথবা কলাম পরস্পর স্থান বিনিময় করলে নির্ণায়ক এর চিহ্ন পরিবর্তিত হয় কিন্তু সাংখ্যিক মান একই থাকে।}\label{prop-3}
+
+	$\left|\begin{array}{ccc}
+	a_1 & b_1 & c_1 \\
+	a_2 & b_2 & c_2 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|=-\left|\begin{array}{ccc}
+	a_2 & b_2 & c_2 \\
+	a_1 & b_1 & c_1 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|$ এবং $\left|\begin{array}{ccc}
+	a_1 & b_1 & c_1 \\
+	a_2 & b_2 & c_2 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|=-\left|\begin{array}{ccc}
+	b_1 & a_1 & c_1 \\
+	b_2 & a_2 & c_2 \\
+	b_3 & a_3 & c_3
+	\end{array}\right|$
+	\begin{tcolorbox}
+		\begin{corollary}
+			এই ধর্মের পর্যায়ক্রমিক প্রয়োগের দ্বারা একটি কলাম বা একটি সারিকে এক অবস্থান থেকে অন্য যেকোনো অবস্থানে নেয়া যায়। একবারে শুধুমাত্র দুইটি কলাম বা সারিতে এটি প্রয়োগ করা যাবে।
+		\end{corollary}	
+	\end{tcolorbox}
+
+	\item \textbf{নির্ণায়কের দুইটি সারি বা দুইটি কলাম সমান হলে নির্ণায়ক এর মান শূন্য হবে।}\label{prop-4}
+	
+	$\left|\begin{array}{ccc}
+		a_1 & a_1 & c_1 \\
+		a_2 & a_2 & c_2 \\
+		a_3 & a_3 & c_3
+	\end{array}\right|=0, \left|\begin{array}{ccc}
+	a_1 & b_1 & c_1 \\
+	a_1 & b_1 & c_1 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|=0$
+	
+	\item \textbf{নির্ণায়কের কোনো কলাম বা সারির ভুক্তিগুলো কোনো নির্দিষ্ট সংখ্যা দ্বারা করলে, নির্ণায়কের মানও ঐ সংখ্যা দ্বারা গুণ হয়।}\label{prop-5}
+
+	$\left|\begin{array}{ccc}
+	ma_1 & b_1 & c_1 \\
+	ma_1 & b_1 & c_1 \\
+	ma_3 & b_3 & c_3
+	\end{array}\right|=m\left|\begin{array}{ccc}
+	a_1 & b_1 & c_1 \\
+	a_1 & b_1 & c_1 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|$ \\  \\অনুরুপভাবে, $\left|\begin{array}{ccc}
+	ma_1 & mb_1 & mc_1 \\
+	a_1 & b_1 & c_1 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|=m\left|\begin{array}{ccc}
+	a_1 & b_1 & c_1 \\
+	a_1 & b_1 & c_1 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|$
+	
+	\item \textbf{নির্ণায়কের কোনো সারি বা কলাম এর ভুক্তিগুলোর সাথে অপর কোনো সারি বা কলাম এর সংশ্লিষ্ট সহগুণকগুলি দ্বারা যথাক্রমে গুণ করলে প্রাপ্ত গুণফলগুলোর বীজগাণিতিক সমষ্টি শূন্য হবে।}\label{prop-6}
+
+	$D=\left|\begin{array}{ccc}
+	a_1 & b_1 & c_1 \\
+	a_1 & b_1 & c_1 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|$ এর জন্য \\ \\
+	$\begin{array}{cc}
+	a_1A_2+b_1B_2+c_1C_2=0, & a_2A_3+b_2B_3+c_2C_3=0, \\
+	a_3A_1+b_3B_1+c_3C_1=0, & a_1A_3+a_2A_1+a_3A_2=0, \\
+	\cdots \quad \cdots,		& c_1C_3+c_2C_1+c_3C_2=0
+	\end{array}$
+	
+	\item \textbf{নির্ণায়ক এর একটি সারি বা কলাম এর ভুক্তিগুলোর প্রত্যেকটি দুইটি ভুক্তির বীজগাণিতিক সমষ্টিরুপে গঠিত হলে, ঐ নির্ণায়কটিকে দুইটি নির্ণায়ক এর বীজগাণিতিক সমষ্টি আকারে প্রকাশ করা যায়।}\label{prop-7}
+
+	$\left|\begin{array}{ccc}
+	a_{1}\pm \alpha_{1} & b_{1} & c_{1} \\
+	a_{2}\pm \alpha_{2} & b_{2} & c_{2} \\
+	a_{3}\pm \alpha_{3} & b_{3} & c_{3}
+	\end{array}\right|=\left|\begin{array}{ccc}
+	a_{1} & b_{1} & c_{1} \\
+	a_{2} & b_{2} & c_{2} \\
+	a_{3} & b_{3} & c_{3}
+	\end{array}\right| \pm \left|\begin{array}{ccc}
+	\alpha_{1} & b_{1} & c_{1} \\
+	\alpha_{2} & b_{2} & c_{2} \\
+	\alpha_{3} & b_{3} & c_{3}
+	\end{array}\right|$\\ \\
+	অনুরুপভাবে, \\
+	$\left|\begin{array}{ccc}
+	a_{1}\pm \alpha_{1} & b_{1}\pm\alpha_{2} & c_{1}\pm\alpha_{3} \\
+	a_{2} & b_{2} & c_{2} \\
+	a_{3} & b_{3} & c_{3}
+	\end{array}\right|=\left|\begin{array}{ccc}
+	a_{1} & b_{1} & c_{1} \\
+	a_{2} & b_{2} & c_{2} \\
+	a_{3} & b_{3} & c_{3}
+	\end{array}\right|\pm\left|\begin{array}{ccc}
+	\alpha_{1} & \alpha_{2} & \alpha_{3} \\
+	a_{2} & b_{2} & c_{2} \\
+	a_{3} & b_{3} & c_{3}
+	\end{array}\right|$
+	
+	\item \textbf{নির্ণায়কের একটি সারি বা কলামের প্রত্যেকটি ভুক্তিকে একটি নির্দিষ্ট সংখ্যা দ্বারা গুণ করে অপর কোনো সারি বা কলামের অনুরূপ ভুক্তিগুলোর সাথে যোগ বা বিয়োগ করলে নির্ণায়ক এর মান একই থাকে।}\label{prop-8}
+
+	$\left|\begin{array}{ccc}
+		a_{1} & b_{1} & c_{1} \\
+		a_{2} & b_{2} & c_{2} \\
+		a_{3} & b_{3} & c_{3}
+	\end{array}\right|=\left|\begin{array}{ccc}
+		a_{1} \pm m b_{1} & b_{1} & c_{1} \\
+		a_{2} \pm m b_{2} & b_{2} & c_{2} \\
+		a_{3} \pm m b_{3} & b_{3} & c_{3}
+	\end{array}\right|$ $\pmb{\left[c'_1 = c_1 \pm mc_2\right]}$\\
+	অনুরুপভাবে, 
+	$\left|\begin{array}{ccc}
+	a_{1} & b_{1} & c_{1} \\
+	a_{2} & b_{2} & c_{2} \\
+	a_{3} & b_{3} & c_{3}
+	\end{array}\right|=\left|\begin{array}{ccc}
+	a_{1} \pm m a_{2} & b_{1} \pm m b_{2} & c_{1}\pm m c_{2} \\
+	a_{2}  & b_{2} & c_{2} \\
+	a_{3}  & b_{3} & c_{3}
+	\end{array}\right|$ $\pmb{\left[r'_1 = r_1 \pm mr_2\right]}$
+\begin{tcolorbox}
+ \textbf{Note:} নির্ণায়কের সারিগুলোকে $r_1,r_2,r_3,\cdots$ দ্বারা প্রকাশ করা হলে উপরুক্ত ধর্মগুলো প্রয়োগ করার পর সারিগুলোকে $r'_1,r'_2,r'_3,\cdots$ দ্বারা প্রকাশ করা হয়। কলাম এর ক্ষেত্রে $c'_1,c'_2,c'_3,\cdots$ দ্বারা প্রকাশ করা হয়।
+\end{tcolorbox}
+\end{enumerate}
+\section{ব্যতিক্রমী, অব্যতিক্রমী ও অনুবন্ধী ম্যাট্রিক্স \\(Singular, Non-singular \& Adjoint Matrix)}
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=\textbf{ব্যতিক্রমী ও অব্যতিক্রমী ম্যাট্রিক্স (Singular \& Non-singular Matrix)}]
+	 \textbf{সংজ্ঞাঃ} যে সকল বর্গ ম্যাট্রিক্স এর নির্ণায়কের মান শূন্য তাদের ব্যাতিক্রমী (Singular) এবং যে সকল বর্গ ম্যাট্রিক্সের নির্ণায়কের মান অশূন্য তাদের অব্যতিক্রমী (Non-singular) ম্যাট্রিক্স বলে।
+\end{tcolorbox}
+মনেকরি, $A=[a_{ij}]_{m \times m}$ একটি বর্গ ম্যাট্রিক্স যার নির্ণায়ক কে $|A|=|a_{ij}|_{m \times m}$ দ্বারা প্রকাশ করা হয়।\\
+যদি $|A|=0$ হয়, তবে $A$ ম্যাট্রিক্সটি ব্যতিক্রমী (Singular)। \\
+যদি $|A|\neq 0$ হয়, তবে $A$ ম্যাট্রিক্সটি অব্যতিক্রমী (Non-singular)।\\
+Example: \\ \\
+$A=\left[\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}\right]$ ম্যাট্রিক্সটি নির্ণায়ক,\\ \\
+$\therefore |A|=\left|\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}\right|=1(45-48)-2(36-42)+3(32-35)=-3+12-9=0$\\ \\
+$\therefore A$ ম্যাট্রিক্সটি ব্যতিক্রমী। \\ \\
+আবার, $B=\left[\begin{array}{cc}
+5 & 4\\
+2 & 3
+\end{array}\right]$ ম্যাট্রিক্সটি নির্ণায়ক,\\ \\
+$\therefore |B|=\left|\begin{array}{cc}
+5 & 4 \\
+2 & 3
+\end{array}\right|=15-8=7\neq 0$\\ \\
+$\therefore B$ ম্যাট্রিক্সটি অব্যতিক্রমী। 
+\newpage
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=\textbf{অনুবন্ধী ম্যাট্রিক্স (Adjoint Matrix)}]
+	\textbf{সংজ্ঞাঃ} কোনো বর্গ ম্যাট্রিক্স $A$ এর নির্ণায়ক $|A|$ এর সহগুণকগুলি দ্বারা গঠিত ম্যাট্রিক্স (ভুক্তির ক্রমানুসারে)  এর বিম্ব (Transpose) ম্যাট্রিক্সকে অনুবন্ধী ম্যাট্রিক্স (Adjoint Matrix) বলে। $A$ ম্যাট্রিক্সের অনুবন্ধী মাত্রিক্সকে $Adj(A)$ দ্বারা প্রকাশ করা হয়।   
+\end{tcolorbox}
+Example: মনেকরি, 
+$A=\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+1 & 2 & 3 \\
+3 & 1 & 1
+\end{array}\right]$ 
+$\therefore |A|=\left|\begin{array}{ccc}
+0 & 1 & 2 \\
+1 & 2 & 3 \\
+3 & 1 & 1
+\end{array}\right|$\\
+$|A|$ এর সহগুণকগুলর নিম্নরুপঃ \\
+$\begin{array}{ccc}
+A_{11}=2-3=-1, & A_{12}=-(1-9)=8, & A_{13}=1-6=-5 \\
+A_{21}=-(1-2)=1, & A_{22}=0-6=-6, & A_{23}=-(0-3)=3 \\
+A_{31}=3-4=-1, & A_{32}=-(0-2)=2, & A_{33}=0-1=-1
+\end{array}$\\
+$|A|$ এর সহগুণক ম্যাট্রিক্স $=\left[\begin{array}{ccc}
+A_{11} & A_{12} & A_{13} \\
+A_{21} & A_{22} & A_{23} \\
+A_{31} & A_{32} & A_{33} 
+\end{array}\right]=\left[\begin{array}{rrr}
+-1 & 8 & -5 \\
+1 & -6 & 3 \\
+-1 & 2 & -1
+\end{array}\right]$\\
+$\therefore Adj(A)=\left[\begin{array}{rrr}
+-1 & 8 & -5 \\
+1 & -6 & 3 \\
+-1 & 2 & -1
+\end{array}\right]^T=\left[\begin{array}{rrr}
+-1 & 1 & -1 \\
+8 & -6 & 2 \\
+-5 & 3 & -1
+\end{array}\right]$
+\section{বর্গ ম্যাট্রিক্সের বিপরীত ম্যাট্রিক্স \\(Inverse Matrix of Square Matrix)} 
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=\textbf{সংজ্ঞা}]
+	$n\times n$ মাত্রার দুইটি বর্গ ম্যাট্রিক্স $A$ ও $B$ এর জন্য যদি $AB=BA=I_n$ হয়, তবে এদের একটিকে অপরটির বিপরীত (Inverse) ম্যাট্রিক্স বলে। $A$ এর বিপরীত ম্যাট্রিক্স কে $A^{-1}$ দ্বারা প্রকাশ করা হয়।
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Note:}
+	\begin{itemize}
+		\item[$\bullet$] $AA^{-1}=A^{-1}A=I_n$
+		\item[$\bullet$] $A$ ম্যাট্রিক্স এর বিপরীত ম্যাট্রিক্স তখনই বিদ্যমান যখন $|A|\neq 0$ অর্থাৎ $A$ ম্যাট্রিক্সটি অব্যতিক্রমী (Non-singular)।  
+	\end{itemize}
+\end{tcolorbox}
+\subsection{বিপরীত ম্যাট্রিক্স নির্ণয়ের পদ্ধতি}
+\subsubsection{অনুবন্ধী ম্যাট্রিক্স পদ্ধতি (Adjoint Matrix Method)}
+মনেকরি, $A=\left[\begin{array}{ccc}
+a_1 & b_1 & c_1 \\
+a_2 & b_2 & c_2 \\
+a_3 & b_3 & c_3
+\end{array}\right]$ একটি অব্যতিক্রমী ম্যাট্রিক্স অর্থাৎ $|A|\neq 0$।\\
+$A$ ম্যাট্রিক্সের ভুক্তিগুলোর সহগুণকগুলোকে $A_1,B_1,C_1,\cdots$ দ্বারা প্রকাশ করা হলে,\\ 
+$Adj(A)=\left[\begin{array}{ccc}
+A_1 & B_1 & C_1 \\
+A_2 & B_2 & C_2 \\
+A_3 & B_3 & C_3
+\end{array}\right]^T=\left[\begin{array}{ccc}
+A_1 & A_2 & A_3 \\
+B_1 & B_2 & B_3 \\
+C_1 & C_2 & C_3
+\end{array}\right]$\\
+\begin{align}
+	\therefore A\cdot Adj(A) &= \left[\begin{array}{ccc}
+	a_1 & b_1 & c_1 \\
+	a_2 & b_2 & c_2 \\
+	a_3 & b_3 & c_3
+	\end{array}\right]\left[\begin{array}{ccc}
+	A_1 & A_2 & A_3 \\
+	B_1 & B_2 & B_3 \\
+	C_1 & C_2 & C_3
+	\end{array}\right] \nonumber\\
+	&=\left[\begin{array}{ccc}
+	a_1A_1+b_1B_1+c_1C_1 & a_1A_2+b_1B_2+c_1C_2 & a_1A_3+b_1B_3+c_1C_3 \\
+	a_2A_1+b_2B_1+c_2C_1 & a_2A_2+b_2B_2+c_2C_2 & a_2A_3+b_2B_3+c_2C_3 \\
+	a_3A_1+b_3B_1+c_3C_1 & a_3A_2+b_3B_2+c_3C_2	& a_3A_3+b_3B_3+c_3C_3
+	\end{array}\right] \nonumber\\
+	&=\left[\begin{array}{ccc}
+	|A| & 0 & 0 \\
+	 0	& |A| & 0 \\
+	 0 	& 0	  & |A|
+	\end{array}\right] \hspace{8pt} \text{(অনুচ্ছেদ \ref{section-7} এবং অনুচ্ছেদ  \ref{section-8} ধর্ম \ref{prop-6})} \nonumber \\
+	&=|A|\left[\begin{array}{ccc}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+	\end{array}\right] \hspace{8pt} \text{(অনুচ্ছেদ \ref{section-5-1})} \nonumber\\
+	\therefore A\cdot{\dfrac{Adj(A)}{|A|}} &=\left[\begin{array}{ccc}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+	\end{array}\right]
+	\label{eq2} 
+\end{align}
+ধরি, $B=\dfrac{Adj(A)}{|A|}$ তাহলে সমীকরণ \eqref{eq2} হতে পাই $AB=I_3$ 
+\begin{equation*}
+	\therefore A^{-1}=\dfrac{Adj(A)}{|A|}
+\end{equation*}
+Example: মনেকরি, $A=\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+1 & 2 & 3 \\
+3 & 1 & 1
+\end{array}\right]$ \\ $\therefore |A|=A=\left|\begin{array}{ccc}
+0 & 1 & 2 \\
+1 & 2 & 3 \\
+3 & 1 & 1
+\end{array}\right|=0(2-3)-1(1-9)+2(1-6)=-2 \neq 0$। \\ সুতরাং $A$ এর বিপরীত ম্যাট্রিক্স নির্ণয় করা সম্ভব।\\ \\
+$|A|$ এর সহগুণকগুলর নিম্নরুপঃ \\
+$\begin{array}{cc}
+A_{11}=\left|\begin{array}{cc}
+2 & 3 \\
+1 & 1
+\end{array}\right|=2-3=-1, & A_{12}=-\left|\begin{array}{cc}
+1 & 3 \\
+3 & 1
+\end{array}\right|=-(1-9)=8, \\
+A_{13}=\left|\begin{array}{cc}
+1 & 2 \\
+3 & 1
+\end{array}\right|=1-6=-5,  & A_{21}=-\left|\begin{array}{cc}
+1 & 2 \\
+1 & 1
+\end{array}\right|=-(1-2)=1, \\
+A_{22}=\left|\begin{array}{cc}
+0 & 2 \\
+3 & 1
+\end{array}\right|=0-6=-6, & A_{23}=-\left|\begin{array}{cc}
+0 & 1 \\
+3 & 1
+\end{array}\right|=-(0-3)=3, \\
+A_{31}=\left|\begin{array}{cc}
+1 & 2 \\
+2 & 3
+\end{array}\right|=3-4=-1, & A_{32}=-\left|\begin{array}{cc}
+0 & 2 \\
+1 & 3
+\end{array}\right|=-(0-2)=2, \\
+A_{33}=\left|\begin{array}{cc}
+0 & 1 \\
+1 & 2
+\end{array}\right|=0-1=-1 &
+\end{array}$\\ 
+
+\begin{align*}
+	\therefore Adj(A) &= \left[\begin{array}{ccc}
+		A_{11} & A_{12} & A_{13} \\
+		A_{21} & A_{22} & A_{23} \\
+		A_{31} & A_{32} & A_{33} 
+	\end{array}\right]^T=\left[\begin{array}{rrr}
+		-1 & 8 & -5 \\
+		1 & -6 & 3 \\
+		-1 & 2 & -1
+	\end{array}\right]^T=\left[\begin{array}{rrr}
+		-1 & 1 & -1 \\
+		8 & -6 & 2 \\
+		-5 & 3 & -1
+	\end{array}\right] \\
+	\therefore A^{-1} &= \dfrac{Adj(A)}{|A|} \\
+	&= \dfrac{1}{|A|}\left[\begin{array}{rrr}
+	-1 & 1 & -1 \\
+	8 & -6 & 2 \\
+	-5 & 3 & -1
+	\end{array}\right] \\
+	&= -\dfrac{1}{2}\left[\begin{array}{rrr}
+	-1 & 1 & -1 \\
+	8 & -6 & 2 \\
+	-5 & 3 & -1
+	\end{array}\right]\\
+	\therefore A^{-1} &=\left[\begin{array}{rrr}
+	\nicefrac{1}{2} & \nicefrac{-1}{2} & \nicefrac{1}{2} \\
+	-4 & 3 & -1 \\
+	\nicefrac{5}{2} & \nicefrac{-3}{2} & \nicefrac{1}{2}
+	\end{array}\right] \hspace{8pt} (Answer)
+\end{align*}
+
+\newpage
+\subsubsection{বীজগাণিতিক পদ্ধতি (Algebraic Method)}
+$A=\left[\begin{array}{ccc}
+0 & 1 & 2 \\
+1 & 2 & 3 \\
+3 & 1 & 1
+\end{array}\right]$ হলে $A^{-1}$ নির্ণয়ঃ\\
+মনেকরি, $AX=B$, যেখানে $X=\left[\begin{array}{c}
+x \\
+y \\
+z
+\end{array}\right]$ এবং $B=\left[\begin{array}{c}
+a \\
+b \\
+c
+\end{array}\right]$. তাহলে $X=A^{-1}B$\\
+এখন, 
+\begin{align*}
+AX=B \Rightarrow \left[\begin{array}{ccc}
+0 & 1 & 2 \\
+1 & 2 & 3 \\
+3 & 1 & 1
+\end{array}\right]\left[\begin{array}{c}
+x \\
+y \\
+z
+\end{array}\right] &= \left[\begin{array}{c}
+a \\
+b \\
+c
+\end{array}\right] \\
+\therefore \left[\begin{array}{c}
+0x+1y+2z \\
+1x+2y+3z \\
+3x+1y+1z
+\end{array}\right] &= \left[\begin{array}{c}
+a \\
+b \\
+c
+\end{array}\right]
+\end{align*}
+\begin{align}
+	y+2z &= a	\tag{1}\\
+	x+2y+3z &= b \tag{2}\\
+	3x+y+z  &= c \tag{3}
+\end{align}
+$(1)$ নং সমীকরণ হতে পাই, 
+\begin{equation}
+	y=a-2z \tag{4}
+\end{equation}
+$(2)$ নং সমীকরণে $y=a-2z$ বসিয়ে পাই, 
+\begin{align}
+	& \quad x+2(a-2z)+3z=b \nonumber \\
+	& \therefore z=x+2a-b \tag{5}
+\end{align}
+$(2)$ নং সমীকরণে $y=a-2z$ বসিয়ে পাই, 
+\begin{align}
+	& \quad \quad 3x+a-2z+z=c \nonumber \\
+	& \Rightarrow 3x+a-z=c \nonumber \\
+	& \Rightarrow 3x+a-x+2z+b=c \quad [(5) \text{ নং হতে}] \nonumber \\
+	& \therefore x=\dfrac{1}{2}a-\dfrac{1}{2}b+\dfrac{1}{2}c \tag{6}
+\end{align}
+$(5)$ নং সমীকরণে $x$ এর মান বসিয়ে পাই, 
+\begin{equation}
+	z=\dfrac{5}{2}a-\dfrac{3}{2}b+\dfrac{1}{2}c \tag{7}
+\end{equation}
+$(4)$ নং সমীকরণে $z$ এর মান বসিয়ে পাই, 
+\begin{equation}
+	y=-4a+3b-c \tag{8}
+\end{equation}
+$(6),(7)$ ও $(8)$ নং সমীকরণ কে ম্যাট্রিক্স আকারে প্রকাশ করলে,
+\begin{align*}
+	\left[\begin{array}{c}
+	x \\
+	y \\
+	z
+	\end{array}\right] &= \left[\begin{array}{rrr}
+	\nicefrac{1}{2} & \nicefrac{-1}{2} & \nicefrac{1}{2} \\
+	-4 & 3 & -1 \\
+	\nicefrac{5}{2} & \nicefrac{-3}{2} & \nicefrac{1}{2}
+	\end{array}\right]\left[\begin{array}{c}
+	a \\
+	b \\
+	c
+	\end{array}\right] \\
+	\therefore A^{-1} &= \left[\begin{array}{rrr}
+	\nicefrac{1}{2} & \nicefrac{-1}{2} & \nicefrac{1}{2} \\
+	-4 & 3 & -1 \\
+	\nicefrac{5}{2} & \nicefrac{-3}{2} & \nicefrac{1}{2}
+	\end{array}\right] \quad (Answer)
+\end{align*}
+\begin{tcolorbox}
+	\textbf{Note:} 
+	\begin{enumerate}
+		\item বিপরীত ম্যাট্রিক্সের বৈশিষ্ট্যঃ 
+		\begin{itemize}
+			\item[$(i)$] $(A^{-1})^{-1}=A$
+			\item[$(ii)$] $(AB)^{-1}=B^{-1}A^{-1}$
+			\item[$(iii)$] $(A^T)^{-1}=(A^{-1})^T$
+			\item[$(iv)$] $(BA)A^{-1}=B(AA^{-1})=B$
+		\end{itemize}
+		\item $\left[\begin{array}{cc}
+				a & b \\
+				c & d
+				\end{array}\right]$ এর বিপরীত ম্যাট্রিক্স $\dfrac{1}{ad-bc}\left[\begin{array}{rr}
+				d & -b \\
+				-c & a
+				\end{array}\right]$
+	\end{enumerate}
+\end{tcolorbox}
+\newpage
+\section{নির্ণায়কের সাহায্যে  একঘাত সমীকরণ জোটের সমাধান \\(Cramer's Rule)}
+\subsection{দুই চলকবিশিষ্ট সমীকরণ জোটের সমাধান}
+মনেকরি, দ্বিচলক বিশিষ্ট দুইটি একঘাত সমীকরণঃ
+\begin{align}
+	a_1x+b_1y &= c_1 \tag{1} \\
+	a_2x+b_2y &= c_2 \tag{2} 
+\end{align}
+ধ্রুবপদগুলোকে বামপক্ষে এনে পাই, 
+\begin{align}
+	a_1x+b_1y-c_1 &= 0 \tag{1} \\
+	a_2x+b_2y-c_2 &= 0 \tag{2} 
+\end{align}
+আড়গুণন পদ্ধতিতে সমাধান করে পাই,  
+\begin{align*}
+	 x &= \dfrac{b_2c_1-b_1c_2}{a_1b_2-a_2b_1}  & y &=\dfrac{a_2c_1-a_1c_2}{a_1b_2-a_2b_1} \\
+	\therefore x &= \dfrac{\left|\begin{array}{cc}
+		c_1 & b_1 \\
+		c_2 & b_2
+		\end{array}\right|}{\left|\begin{array}{cc}
+		a_1 & b_1 \\
+		a_2 & b_2
+		\end{array}\right|}=\dfrac{D_{x}}{D} & \therefore y &= \dfrac{\left|\begin{array}{cc}
+		a_1 & c_1 \\
+		a_2 & c_2
+		\end{array}\right|}{\left|\begin{array}{cc}
+		a_1 & b_1 \\
+		a_2 & b_2
+		\end{array}\right|}=\dfrac{D_{y}}{D}
+\end{align*}
+যেখানে, 
+\begin{align*}
+	D &= \left|\begin{array}{cc}
+	a_1 & b_1 \\
+	a_2 & b_2
+	\end{array}\right|\neq 0 \quad [x,y \text{ এর সহগ সম্বলিত নির্ণায়ক}] \\
+	D_x &= \left|\begin{array}{cc}
+	c_1 & b_1 \\
+	c_2 & b_2
+	\end{array}\right| \quad [D \text{ এর ১ম কলাম ধ্রুবপদগুলো দ্বারা প্রতিস্থাপন করে গঠিত নির্ণায়ক}]\\
+	D_y &= \left|\begin{array}{cc}
+	a_1 & c_1 \\
+	a_2 & c_2
+	\end{array}\right| \quad [D \text{ এর ২য় কলাম ধ্রুবপদগুলো দ্বারা প্রতিস্থাপন করে গঠিত নির্ণায়ক}]
+\end{align*}
+\newpage
+\subsection{তিন চলকবিশিষ্ট সমীকরণ জোটের সমাধান}
+মনেকরি, তিন চলকবিশিষ্ট তিনটি একঘাত সমীকরণঃ
+\begin{align}
+	a_1x+b_1y+c_1z &= d_1 \tag{1} \\
+	a_2x+b_2y+c_2z &= d_2 \tag{2} \\
+	a_3x+b_3y+c_3z &= d_3 \tag{3}
+\end{align}
+Cramer's Rule অনুযায়ী সমাধান, 
+\begin{equation*}
+	x=\dfrac{D_x}{D}, y=\dfrac{D_y}{D} \text{ এবং } z=\dfrac{D_z}{D}
+\end{equation*}
+যেখানে, 
+\begin{align*}
+	D &= \left|\begin{array}{ccc}
+	a_1 & b_1 & c_1 \\
+	a_2 & b_2 & c_2 \\
+	a_3 & b_3 & c_3
+	\end{array}\right|\neq  0\quad [x,y,z \text{ এর সহগ সম্বলিত নির্ণায়ক}] \\
+	D_x &= \left|\begin{array}{ccc}
+	d_1 & b_1 & c_1 \\
+	d_2 & b_2 & c_2 \\
+	d_3 & b_3 & c_3
+	\end{array}\right| \quad [D \text{ এর ১ম কলাম ধ্রুবপদগুলো দ্বারা প্রতিস্থাপন করে গঠিত নির্ণায়ক}]\\
+	D_y &= \left|\begin{array}{ccc}
+	a_1 & d_1 & c_1 \\
+	a_2 & d_2 & c_2 \\
+	a_3 & d_3 & c_3
+	\end{array}\right| \quad [D \text{ এর ২য় কলাম ধ্রুবপদগুলো দ্বারা প্রতিস্থাপন করে গঠিত নির্ণায়ক}]\\
+	D_z &= \left|\begin{array}{ccc}
+	a_1 & b_1 & d_1 \\
+	a_2 & b_2 & d_2 \\
+	a_3 & b_3 & d_3
+	\end{array}\right| \quad [D \text{ এর ৩য় কলাম ধ্রুবপদগুলো দ্বারা প্রতিস্থাপন করে গঠিত নির্ণায়ক}]
+\end{align*}
+\begin{tcolorbox}
+	\textbf{Note:} $D=0$ হলে সমীকরণ জোটের কোনো সমাধান নেই অথবা অসংখ্য সমাধান আছে।
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Note:} সমীকরণ জোটের ধ্রুবপদগুলোকে অবশ্যই সমীকরণের ডানপক্ষে নিতে হবে।
+\end{tcolorbox}
+\newpage
+Example:
+\begin{itemize}
+	\item[$(i)$] $\begin{array}{r}
+	5x+2y-11=0 \\
+	3x+4y-1=0
+	\end{array}\Bigg\}$ সমীকরণ জোটের সমাধানঃ\\ \\
+	সমীকরণ জোট, 
+	\begin{align}
+	5x+2y &= 11 \tag{1} \\
+	3x+4y &=1	\tag{2}
+	\end{align}
+	Cramer's Rule অনুযায়ী, 
+	\begin{align*}
+		D &=\left|\begin{array}{cc}
+		5 & 2 \\
+		3 & 4
+		\end{array}\right|=20-6=14\neq 0 \\ \\
+		D_x &=\left|\begin{array}{cc}
+		11 & 2 \\
+		1 & 4
+		\end{array}\right|=44-2=42 \\ \\
+		D_y &=\left|\begin{array}{cc}
+		5 & 11 \\
+		3 & 1
+		\end{array}\right|=5-33=-28 
+	\end{align*}
+	\begin{align*}
+		\therefore x &=\dfrac{D_x}{D}=\dfrac{42}{14}=3 \\ \\
+		\therefore y &=\dfrac{D_y}{D}=\dfrac{-28}{14}=-2 \\ 
+	\end{align*}
+	\begin{equation*}
+		\therefore (x,y)= (3,-2) \quad (Answer)
+	\end{equation*}
+	
+	\newpage
+	\item[$(ii)$] $\begin{array}{r}
+	x+2 y-z=5 \\
+	3 x-y+3 z=7 \\
+	2 x+3 y+z=11
+	\end{array}\Bigg\}$ সমীকরণ জোটের সমাধানঃ\\ \\
+	সমীকরণ জোট, 
+	\begin{align}
+		x+2y-z &= 5 \tag{1}\\
+		3x-y+3z &= 7 \tag{2}\\
+		2x+3y+z &= 11 \tag{3}
+	\end{align}
+	Cramer's Rule অনুযায়ী,
+	\begin{align*}
+	D &=\left|\begin{array}{rrr}
+	1 & 2 & -1 \\
+	3 & -1 & 3 \\
+	2 & 3 & 1
+	\end{array}\right|= 1(-1-9)-2(3-6)-1(9+2)= -15 \\ \\
+	D_{x}&=\left|\begin{array}{rrr}
+	5 & 2 & -1 \\
+	7 & -1 & 3 \\
+	11 & 3 & 1
+	\end{array}\right|= 5(-1-9)-2(7-33)-1(21+11)=-30 \\ \\
+	D_{y} &=\left|\begin{array}{rrr}
+	1 & 5 & -1 \\
+	3 & 7 & 3 \\
+	2 & 11 & 1
+	\end{array}\right|= 1(7-33)-5(3-6)-1(33-14)=-30 \\ \\
+	D_{z} &=\left|\begin{array}{rrr}
+	1 & 2 & 5 \\
+	3 & -1 & 7 \\
+	2 & 3 & 11
+	\end{array}\right|=1(-11-21)-2(33-14)+5(9+2)=-15 
+	\end{align*}
+	\begin{align*}
+	\therefore x=\frac{D_{x}}{D}=\frac{-30}{-15}=2 \\ \\
+	\therefore y=\frac{D_{y}}{D}=\frac{-30}{-15}=2 \\ \\
+	\therefore z=\frac{D_{z}}{D}=\frac{-15}{-15}=1
+	\end{align*}
+	\begin{equation*}
+		\therefore (x,y,z) = (2,2,1) \hspace{8pt} (Answer)
+	\end{equation*}
+\end{itemize}
+
+
+
